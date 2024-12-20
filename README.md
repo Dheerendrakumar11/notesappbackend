@@ -31,8 +31,8 @@ This is the backend for the Notes App, developed using **Node.js** and **Express
 
 ## Install the required dependencies:
 
-cd notesappbackend
-npm install
+-cd notesappbackend
+-npm install
 
 ## create .env file
 
