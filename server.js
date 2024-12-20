@@ -18,11 +18,14 @@ connectDB();
 
 // Middleware
 app.use(express.json()); // Parse JSON request bodies
-app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Authorization', 'Content-Type'],
-  })); // Handle Cross-Origin Resource Sharing
+
+const corsOptions = {
+  origin: 'https://noteappfronted.vercel.app', // Allow requests from your frontend domain
+  methods: 'GET,POST,PUT,DELETE', // Allow methods
+  allowedHeaders: 'Content-Type,Authorization', // Allow specific headers
+  credentials: true, // Allow cookies to be sent
+};
+app.use(cors(corsOptions)); // Handle Cross-Origin Resource Sharing
 app.use(helmet()); // Secure HTTP headers
 
 // Routes
